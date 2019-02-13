@@ -1,11 +1,16 @@
 # kubectl-rbac-user
 
-## Why?
+## Motivation
 
 * Managing users with rbac can be complicated and has a steep learning curve
 * Hunting down all bindings to a user on deletion of the user can be a tedious manual process
 
 ## Installation
+
+### Dependencies
+
+* jq
+* bash
 
 ### With [krew](https://github.com/GoogleContainerTools/krew) (recommended)
 
@@ -20,6 +25,12 @@ kubectl rbac-user
 * Run `chmod +x kubectl-rbac_user`
 * Add the path to directory in your $PATH. eg `export PATH="/path/to/dir:$PATH"`
 * Test `kubectl rbac_user`
+
+## Features
+
+* Create and delete users
+* Automatically delete related ClusterRoleBinding and RoleBinding objects
+* Works well with [view-serviceaccount-kubeconfig](https://github.com/superbrothers/kubectl-view-serviceaccount-kubeconfig-plugin/) plugin
 
 ## Usage
 
